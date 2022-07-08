@@ -46,8 +46,8 @@ def goMessege(str):
     from email.mime.image import MIMEImage  # Изображения
 
     addr_from = "IoT_Helper@yahoo.com"  # Адресат
-    addr_to = "64200164@mail.com"  # Получатель
-    password = "IoTxrtr56j460!lfr*fh5Frb5GlQfg"  # Пароль
+    addr_to = "642[...]64@mail.com"  # Получатель
+    password = "IoTxrtr5[...]5GlQfg"  # Пароль
 
     msg = MIMEMultipart()  # Создаем сообщение
     msg['From'] = addr_from  # Адресат
