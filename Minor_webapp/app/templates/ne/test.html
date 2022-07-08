@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<title>CSS Разные сетки макета веб сайта</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="img/main.ico">
+    <link rel="stylesheet" href="../static/style.css">
+    <style>
+    body{
+        color: white;
+        background-image: url('img/fom.png');
+        background-image: url({{ url_for('static', filename='img/fom.png') }});
+        }
+
+      #zatemnenie {
+        background: rgba(102, 102, 102, 0.5);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+      }
+      #okno {
+        width: 300px;
+        height: 90px;
+        text-align: center;
+        padding: 15px;
+        border: 3px solid #2f2f3e;
+        border-radius: 10px;
+        color: #2f2f3e;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background: #fff;
+      }
+      #zatemnenie:target {display: block;}
+      .close {
+        display: inline-block;
+        border: 1px solid #2f2f3e;
+        color: #2f2f3e;
+        padding: 0 12px;
+        margin: 10px;
+        text-decoration: none;
+        background: #f2f2f2;
+        font-size: 14pt;
+        cursor:pointer;
+      }
+      .close:hover {background: #e6e6ff;}
+
+    </style>
+</head>
+<body>
+
+
+<div class="header">
+  <h1>CSS Разные сетки макета веб сайта</h1>
+  <p>Измените размер окна браузера, чтобы увидеть эффект отклика.</p>
+</div>
+
+<div class="topnav">
+ <a class="active" href="/">Основная</a>
+ <a href="/project">Проект</a>
+ <a href="/FAQ">Помощь</a>
+ <a href="/test">Дополнительно</a>
+
+ <a>
+     <form action="/get-text" method="POST">
+
+     <input name="test" type="text" />
+     <input type="submit" value="Найти" />
+
+     </form>
+ </a>
+</div>
+
+<!-- Left -->
+<div class="row">
+  <div class="column side">
+    <h2>Боковая часть</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+  </div>
+
+ <!-- Main -->
+  <div class="column middle">
+    <h2>Основное содержание</h2>
+    <p></p>
+
+
+  </head>
+
+  <body>
+
+    <div id="zatemnenie">
+      <div id="okno">
+        Всплывающее окошко!<br>
+        <a href="#" class="close">Закрыть</a>
+      </div>
+    </div>
+
+    <a href="#zatemnenie">Вызвать всплывающее окно</a>
+
+ <!-- Right -->
+  <div class="column side">
+    <h3> Пользователь: </h3>
+    <p>{{ name }}</p>
+    <h3> Последний сигнал:</h3>
+    <p>{{ last }}</p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Нижний Колонтитул</p>
+    <p>Напишите нам письмо:</p>
+    <a href="mailto:shabazovaolena@mail.ru">shabazovaolena@mail.ru</a>
+</div>
+
+</body>
+</html>

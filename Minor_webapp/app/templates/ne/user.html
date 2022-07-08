@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<html lang="ru">
+
+<body>
+
+{% block content %}
+ <!-- Main -->
+      <center>
+        <h2>Расположение пользователя</h2>
+          <hr>
+
+            <div id="map"></div>
+      <script type="text/javascript">
+
+	ymaps.ready(init);
+	var myMap;
+
+	function init() {
+
+		myMap = new ymaps.Map("map", {
+			center: [{{ location.0 }}, {{ location.1 }}], // Координаты центра карты
+			zoom: 16 // Маштаб карты
+		});
+
+		myMap.controls.add(
+			new ymaps.control.ZoomControl()  // Добавление элемента управления картой
+		);
+
+		myPlacemark = new ymaps.Placemark([{{ location.0 }}, {{ location.1 }}], {}, {  // Координаты метки объекта
+	        preset: "twirl#greyIcon" // 	'twirl#hospitalIcon' - если нужна помощь
+        });
+
+myMap.geoObjects.add(myPlacemark);
+
+		myMap.geoObjects.add(myPlacemark); // Добавление метки
+		//myPlacemark.balloon.open(); // Открытие подсказки метки
+
+	};
+
+</script>
+          <hr>
+          <p><h3> {{ location }} </h3></p>
+          <p><i> {{ location_time.0 }} {{ location_time.1 }}</i></p>
+          <hr>
+
+</center>
+{% endblock %}
+{% block mainmenu %} <!--
+    <h4>
+        <p> Пульс: {{ pulse.0 }} </p>
+        <i> {{ pulse.1 }} {{ pulse.2 }}</i>
+        <p> Состояние: {{ sost }} </p>
+        <hr>
+        <script src="//megatimer.ru/get/52fd94d2d03b4acf548c90088e1a3b57.js"></script>
+        <hr>
+        <p>Через 30 минут после входа в аккаунт, соединение будет сброшено</p>
+    </h4> --!>
+{% endblock mainmenu %}
+</body>
+</html>

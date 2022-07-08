@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+ <html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Дети</title>
+
+    <link rel="stylesheet" href="../static/style.css">
+
+    <!-- Карты -->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=API_KEY" type="text/javascript"></script>
+
+</head>
+<body>
+
+
+<div class="header"> <!-- Верхняя плашка -->
+
+    <h1 style="float:left;">Дети:</h1>
+
+
+    <p><button class="button but-child" style="float:left; position:relative;">Саша</button>
+    <button class="button but-add-child" style="float:left; position:relative;"><b>Добавить ребёнка +</b></button>
+        <!--img src="img/logo.png" alt="" width="84" height="105" style="float:right;"-->
+    </p>
+
+
+</div>
+
+<div class="topnav"> <!-- Menu bar -->
+
+</div>
+
+<!-- Left -->
+<div class="row">
+  <div class="column side">
+
+
+
+
+  </div>
+
+ <!-- Main -->
+  <div class="column middle">
+
+<p>
+<div id="map"></div>
+            <script type="text/javascript">
+
+	ymaps.ready(init);
+	var myMap;
+
+	function init() {
+
+		myMap = new ymaps.Map("map", {
+			center: [{{ latitude }}, {{ longitude }}], // Координаты центра карты
+			zoom: 16 // Маштаб карты
+		});
+
+		myMap.controls.add(
+			new ymaps.control.ZoomControl()  // Добавление элемента управления картой
+		);
+
+		myPlacemark = new ymaps.Placemark([{{ latitude }}, {{ longitude }}], {}, {  // Координаты метки объекта
+	        preset: "twirl#greyIcon" // 	'twirl#hospitalIcon' - если нужна помощь
+        });
+
+myMap.geoObjects.add(myPlacemark);
+
+		myMap.geoObjects.add(myPlacemark); // Добавление метки
+		//myPlacemark.balloon.open(); // Открытие подсказки метки
+
+	};
+
+    </script>
+  </div>
+</p>
+
+      <button class="button but-add-child">
+          <h4>История перемещения</h4>
+          <p>22:26 Двор</p>
+          <p>22:28 Дом</p>
+          <p>22:30 Дом</p>
+          <p>22:32 Дом</p>
+          <p>22:34 Дом</p>
+          <!--p>21:40 Дом</p>
+          <p>21:42 Дом</p>
+          <p>21:05 Дом</p>
+          <p>21:07 Дом</p>
+          <p>21:10 Дом</p-->
+      </button>
+
+      <button class="button but-add-child">
+
+          <h3>Заряд батареи:</h3> <h3> {{batar}}%</h3>
+
+      </button>
+
+ <!-- Right -->
+  <div class="column side">
+    <h2></h2>
+      <h4>
+
+      </h4>
+  </div>
+</div>
+
+
+<div class="footer"> <!-- Нижняя плашка -->
+    <a>
+
+    </a>
+</div>
+
+</body>
+</html>

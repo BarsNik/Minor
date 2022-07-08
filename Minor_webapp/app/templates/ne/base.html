@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<head>
+<title>IoT</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- AIzaSyABBX2pzWJzZSCK-t9cel72rUnidZ4Pp2I -->
+
+    <link rel="icon" href="/img/main.ico"> <!-- иконка сайта -->
+    <link rel="stylesheet" href="../static/style.css"> <!-- CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- Гугл иконки -->
+    <style>
+    body{
+        color: white;
+        background-image: url('img/fom.jpg');
+        background-image: url({{ url_for('static', filename='img/fom.png') }});
+        font-family: 'Montserrat', sans-serif;
+        }
+    i{
+        color: grey;
+        }
+    </style>
+    <script>
+        $(function() {
+            $('#clickMe').alertBox({
+                href: 'base.html'
+                // Вы должны добавить
+                // href ссылку на страницу (успешно)
+            });
+        });
+    </script>
+    <!-- подключим Яндекс карты -->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=8c43fadf-3f30-4d06-9dd9-6f7f365c4826" type="text/javascript">
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<div class="header"> <!-- Верхняя плашка -->
+    <hr>
+    <i class="material-icons" style="font-size:36px;">computer</i>
+    <h1>IoT — помощь нуждающимся</h1>
+    <hr>
+</div>
+
+<div class="topnav"> <!-- Menu bar -->
+    <a href="/" class="shine-button-r">Основная</a>
+
+     <a href="/project" class="shine-button-r">Проект</a>
+
+     <a href="/help" class="shine-button-r">Помощь</a>
+
+    <a href="/contact" class="shine-button-r">Контакты</a>
+
+
+
+    {% if user %}
+    <a href="/logout" class="shine-button-in">Выйти</a>
+
+    <a href="/user" class="shine-button-in">
+        {{ user }} <!-- Имя пользователя -->
+    </a>
+    {% else %}
+        <a href="/login" class="shine-button-in">Войти</a>
+    {% endif %}
+
+
+</div>
+
+<!-- Left -->
+<div class="row">
+  <div class="column side">
+    <h2>Проект сейчас</h2>
+      <hr>
+    <p>На данный момент проект находится на стадии разработки.</p>
+      <p>При наличии ошибок, просьба сообщить о них, отправив письмо на почту разработчиков.</p>
+  </div>
+
+ <!-- Main -->
+  <div class="column middle">
+      {% block content %} <!-- Место для вставки основного контента -->
+      {% endblock %}
+  </div>
+
+ <!-- Right -->
+  <div class="column side">
+    <h2>Локальные данные</h2>
+      <hr>
+      <h4>
+          {% with messeges = get_flashed_messages() %}
+                {% if messages %}
+                    {% for msg in messages() %}
+                        <p>{{msg}}</p>
+
+                    {% endfor %}
+                {% endif %}
+          {% endwith %}
+
+          {% block mainmenu %} <!-- Место для вставки основного контента -->
+          {% endblock mainmenu %}
+
+      </h4>
+
+      {% if user %}
+      <h4>
+        <p> Пульс: {{ pulse.0 }} </p>
+            {% if sost == "Экстра" or sost == "Трбуется настройка" %}
+                <p style="color:#FFFF00;"> Состояние: {{ sost }} </p>
+            {% else %}
+                <p> Состояние: {{ sost }} </p>
+            {% endif %}
+
+          <i> {{ pulse.1 }} {{ pulse.2 }}</i>
+        <hr>
+          <script src="//megatimer.ru/get/1e1ebc6f1cd048513959f1233514b892.js"></script>
+        <hr>
+        <p>Через 30 минут после входа в аккаунт, соединение будет сброшено</p>
+    </h4>
+      {% else %}
+      Нет информации
+      {% endif %}
+
+  </div>
+</div>
+
+
+<div class="footer"> <!-- Нижняя плашка -->
+    <a>
+        <form class="shine-button" action="mailto:64200164@mail.ru" enctype="text/plain">
+        <input type="submit" value="Написать письмо">
+            </form>
+    </a>
+</div>
+
+
+</body>
+</html>

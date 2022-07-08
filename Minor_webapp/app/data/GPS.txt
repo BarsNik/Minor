@@ -1,0 +1,1 @@
+Pulse: 62.02GPS is OKGPS Coordinates:Latitude	55*40'24.4888"N		55.673469Longitude	37*29'25.7276"E		37.490478Sat: 7Speed: 0.00Altitude: 167.60Time: 21:17:12Date: 1.07.2021

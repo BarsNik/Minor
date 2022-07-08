@@ -1,0 +1,315 @@
+
+body {
+    background: #000 url(img/Zad.png); /* Фоновый цвет и фоновый рисунок*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+
+    font-family: "PT Sans";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Создайте три одинаковых столбца, которые плавают рядом друг с другом */
+.column {
+  float: left;
+  width: 50%;
+  padding: 100px;
+}
+
+/* Очистить поплавки после столбцов */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+h1
+{
+    /*text-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0px 2px 0 rgba(0, 0, 0, .5);*/
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    margin: 0 0 30px 0;
+    letter-spacing: 4px;
+    font: normal 26px/1 Verdana, Helvetica;
+    position: relative;
+}
+
+
+.pass_log {
+  width: 400px;
+  height: 50px;
+  border: thick solid #ffff;
+  border-radius: 40px;
+  background: #ffff;
+}
+
+
+
+.textField, .passField {
+    width: 100%; /* Ширина поля */
+    padding: 10px; /* Поля */
+    box-sizing: border-box; /* Алгоритм расчёта ширины */
+    /*box-shadow: inset 0 1px 5px rgba(0,0,0,0.2);  Тень внутри */
+    /* border: 1px solid #ccc; Параметры рамки */
+    color: #black; /* Цвет текста */
+    /*background: url(img/email.png) no-repeat 5px 50%;  Картинка пользователя */
+    padding-left: 10px; /* Расстояние от левого края */
+
+    outline: 0;
+    outline-offset: 0;
+
+
+    margin: 0em;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(255, 255, 255), rgb(255, 255, 255));
+   }
+   .passField {
+    /*background: url(/example/image/lock.png) no-repeat 5px 50%;  Картинка для поля с паролем */
+   }
+
+.input {
+    background-color: -internal-light-dark(rgb(0, 0, 0), rgb(0, 0, 0));
+}
+
+#users-password {
+  width: 400px;
+  height: 50px;
+  font-size: 20px;
+  padding: 12px 20px;
+  border: 1px solid #cecece;
+  background: #F6F6f6;
+  border-radius: 25px;
+}
+#users-password:focus{
+  outline:none;
+  border-color:#2196F3;
+}
+
+#users-login {
+  width: 400px;
+  font-size: 20px;
+  padding: 12px 20px;
+  border: 1px solid #cecece;
+  background: #F6F6f6;
+  border-radius: 25px;
+
+  margin: 0 0 30px 0;
+}
+#users-login:focus{
+  outline:none;
+  border-color:#2196F3;
+}
+
+#users-fio {
+  width: 400px;
+  font-size: 20px;
+  padding: 12px 20px;
+  border: 1px solid #cecece;
+  background: #F6F6f6;
+  border-radius: 25px;
+}
+
+#users-email {
+  width: 400px;
+  font-size: 20px;
+  padding: 12px 20px;
+  border: 1px solid #cecece;
+  background: #F6F6f6;
+  border-radius: 25px;
+}
+
+#users-fio-reb {
+  width: 400px;
+  font-size: 20px;
+  padding: 12px 20px;
+  border: 1px solid #cecece;
+  background: #F6F6f6;
+  border-radius: 25px;
+
+  margin: 0 0 30px 0;
+}
+
+#users-password-reb {
+  width: 400px;
+  font-size: 20px;
+  padding: 12px 20px;
+  border: 1px solid #cecece;
+  background: #F6F6f6;
+  border-radius: 25px;
+}
+
+.button {
+    background-color: #ffffff;
+    border: none;
+    color: #666;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+    margin: 20px 0px;
+    width: 400px;
+}
+.button1 {border-radius: 25px;}
+.button2 {border-radius: 25px; background-color: #ffffff00; color: rgb(255 255 255 / 100); margin: 0px 0px;}
+.but-child {width: 100px; background-color: #ffffff00; color: rgb(255 255 255 / 100);}
+.but-add-child {width: 200px; background-color: #ffffff00; color: rgb(255 255 255 / 100);
+font-size: 14px; margin: 27px 10px;
+padding: 5px 0px;
+border: 2px double white; /* Параметры границы */
+border-radius: 25px;
+}
+
+/* Стиль заголовка */
+.header {
+    padding: 10px; /*внешний отступ*/
+    text-align: center;
+}
+
+/* Стиль верхней панели навигации */
+.topnav {
+    color: white;
+    overflow: hidden;
+    background-color: #4669ff14;
+}
+
+/* Стиль верхних навигационных ссылок */
+.topnav a {
+    color: white;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    display:inline-block;
+}
+
+/* Изменение цвета при наведении */
+.topnav a:hover {
+    background-color: #4d3e96;
+     background: #7553ff;
+     color: #fff;
+}
+
+/* Создайте три одинаковых столбца, которые плавают рядом друг с другом */
+.column {
+    float: left;
+    padding: 10px;
+}
+
+/* Левый и правый столбец */
+.column.side {
+    width: 25%;
+}
+
+/* Средний столбец */
+.column.middle {
+    width: 50%;
+}
+
+/* Очистить поплавки после колонн */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+ya_map {
+	font-family: arial;
+	font-size: 12px;
+	color: #454545;
+}
+
+#map {
+	width: 540px;
+	height: 450px;
+}
+
+/* Отзывчивый макет - делает три колонки стек поверх друг друга, а не рядом друг с другом */
+@media screen and (max-width: 1000px) {
+    .column.side, .column.middle {
+        width: 100%;
+    }
+
+/* Стиль нижнего колонтитула */
+.footer {
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+.battery {
+  border: 3px solid #333;
+  width: 18px;
+  height: 28px;
+  padding: 2px;
+  border-radius: 4px;
+  position: relative;
+  margin: 15px 0;
+
+  &:before {
+    content: '';
+    height: 3px;
+    width: 18px;
+    background: #333;
+    display: block;
+    position: absolute;
+    top: -6px;
+    border-radius: 4px 4px 0 0;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border: 1px solid #fff;
+    border-radius: 2px;
+  }
+}
+
+.battery-level {
+  background: #30b455;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+
+  &.warn {
+    background-color: #EFAF13;
+  }
+
+  &.alert {
+    background-color: #e81309;
+
+    &:before {
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cg%3E%3C%2Fg%3E%20%3Cpath%20fill%3D%22%23e81309%22%20d%3D%22M17.927%2012l2.68-10.28c0.040-0.126%200.060-0.261%200.060-0.4%200-0.726-0.587-1.32-1.314-1.32-0.413%200-0.78%200.187-1.019%200.487l-13.38%2017.353c-0.18%200.227-0.287%200.513-0.287%200.827%200%200.733%200.6%201.333%201.333%201.333h8.073l-2.68%2010.28c-0.041%200.127-0.060%200.261-0.060%200.4%200.001%200.727%200.587%201.32%201.314%201.32%200.413%200%200.78-0.186%201.020-0.487l13.379-17.353c0.181-0.227%200.287-0.513%200.287-0.827%200-0.733-0.6-1.333-1.333-1.333h-8.073z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E'); background-repeat: no-repeat;
+  background-size: $lightning-size;
+  height: $lightning-size;
+  width: $lightning-size;
+  margin: -25px 0 0 2px;
+      content: '';
+      display: inline-block;
+      position: absolute;
+    }
+  }

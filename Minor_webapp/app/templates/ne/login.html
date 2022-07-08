@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<html lang="ru">
+
+<body>
+
+{% block content %}
+    <h2>Вход в аккаунт</h2>
+    <hr>
+     <form action="" method="POST" >
+
+        <p>
+            <h2>Логин:
+            <input name="login" type="text" placeholder="Место для ввода"> <!--value="Никулин ВС"-->
+            <input type="submit" class="shine-button-r" value="Войти"/>
+            </h2>
+        </p>
+            <!--p class="shine-button">
+                Пароль
+                <input name="pass" type="text"/>
+         </p-->
+        <p>
+        </p>
+     </form>
+
+{% endblock %}
+
+{% block mainmenu %}
+
+{% with messeges = get_flashed_messages() %}
+                {% if messages %}
+                    {% for msg in messages() %}
+                        <p>{{msg}}</p>
+                    {% endfor %}
+                {% endif %}
+          {% endwith %}
+
+{% endblock mainmenu %}
+
+</body>
+</html>
